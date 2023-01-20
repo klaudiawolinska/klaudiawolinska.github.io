@@ -104,9 +104,9 @@ Finally, **low kurtosis** indicates that there are **none or not many outliers**
 
 Below you will find the scripts that generate the graphs presented above:
 
-_[Generate skewness graphs (Jupyter Notebook)]()_
+_[Generate skewness graphs (Jupyter Notebook)](https://github.com/klaudiaszpyrka/klaudiaszpyrka.github.io/blob/main/assets/notebooks/2019-08-12-skewness_graph.ipynb)_
 
-_[Generate kurtosis graphs (Jupyter Notebook)]()_
+_[Generate kurtosis graphs (Jupyter Notebook)](https://github.com/klaudiaszpyrka/klaudiaszpyrka.github.io/blob/main/assets/notebooks/2019-08-12-kurtosis_graph.ipynb)_
 
 
 # Measures of Variability: Variance, Standard Deviation, Coefficient of Variation

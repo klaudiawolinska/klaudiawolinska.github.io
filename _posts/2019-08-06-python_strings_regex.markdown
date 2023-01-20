@@ -1247,3 +1247,5 @@ print(re.findall(r'\w+(?<!\.txt):\s(\w+)', files))
 
 <br>
 Congratulations on reaching the end of this post! Regex can be extremely difficult but they're also a very powerful tool.
+
+You can find a Jupyter Notebook with all examples from this post [here](https://github.com/klaudiaszpyrka/klaudiaszpyrka.github.io/blob/main/assets/notebooks/2019-08-06-python_strings_regex.ipynb).
