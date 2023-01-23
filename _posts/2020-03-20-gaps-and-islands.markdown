@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Solving Gaps and Islands Problem with AWS Redshift
+title: Solve gaps and islands problem in AWS Redshift
 date: 2020-03-20 00:00:00 +0100
 ---
 

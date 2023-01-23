@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CTEs & Temporary Tables
+title: CTEs & temporary tables
 date: 2019-10-02 00:00:00 +0100
 ---
 

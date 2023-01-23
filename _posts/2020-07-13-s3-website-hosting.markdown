@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Host a Static Website on Amazon S3 Within 5 Minutes
+title: Host a static website on Amazon S3 within 5 minutes
 date: 2020-07-13 00:00:00 +0100
 ---
 

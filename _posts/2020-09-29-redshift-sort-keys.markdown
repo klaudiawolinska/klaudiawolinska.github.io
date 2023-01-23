@@ -1,6 +1,6 @@
 ---
 layout: post
-title: When to Use Redshift Sort Keys?
+title: When to use Redshift sort keys?
 date: 2020-09-29 00:00:00 +0100
 ---
 

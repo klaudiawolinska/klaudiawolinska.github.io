@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Statistics 101: Measuring Data"
+title: "Statistics 101: measuring data"
 date: 2019-08-12 00:00:00 +0100
 ---
 

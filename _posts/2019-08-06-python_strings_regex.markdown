@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python Regular Expressions and String Manipulation
+title: Python regular expressions and string manipulation
 date: 2019-08-06 00:00:00 +0100
 ---
 
