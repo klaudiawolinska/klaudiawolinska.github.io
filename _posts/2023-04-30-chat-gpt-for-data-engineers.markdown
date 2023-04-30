@@ -4,6 +4,8 @@ title:  "Chat GPT and the Data Engineering world"
 date:   2023-04-30 00:00:00 +0000 
 ---
 
+![](/assets/img/2023-04-30-chat-gpt-for-data-engineers/chatgpt-gb89c1ab5e_1920.jpg)
+
 As the world becomes increasingly data-driven, data engineers have become a crucial part of the tech industry. They are responsible for building, maintaining, and optimizing the infrastructure that allows data to be collected, stored, and analyzed. With the explosion of big data, machine learning, and AI, data engineers have more tools at their disposal than ever before, and one of the most powerful is Chat GPT.
 
 Chat GPT is a language model created by OpenAI that uses deep learning to generate human-like responses to text prompts. It has been trained on a massive corpus of text data and can generate high-quality text in a wide range of styles and genres. Data engineers can use Chat GPT in a variety of ways to improve their work and streamline their processes.
