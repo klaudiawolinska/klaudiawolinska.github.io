@@ -7,30 +7,31 @@ date: 2019-08-06 00:00:00 +0100
 Text processing and manipulation are often critical in the process of data cleansing and preparation. Machine learning models which use such data include _sentiment analysis of social media, language translations, filtering spam messages, parsing and extracting data from websites_ and many more. Regular expressions allow for these tasks to be completed way faster and more efficiently.
 
 ## Table of Contents
-- [Basic String Methods](#basic-string-methods)
-    - [Length of a string](#length-of-a-string)
-    - [Concatenation](#concatenation)
-    - [Slicing](#slicing)
-    - [String capitalization](#string-capitalization)
-    - [Split methods](#split-methods)
-    - [Remove whitespace](#remove-whitespace)
-    - [Replace methods](#replace-methods)
-    - [Chain string methods](#chain-string-methods)
-    - [Find the position of a substring](#find-substring-position)
-    - [Count the occurrences of a substring](#count-substr-occurrences)
-    - [Positional string formatting](#positional-string-formatting)
-- [Regular Expressions](#regular-expressions)
-    - [Common methods](#common-methods)
-    - [Metacharacters](#metacharacters)
-    - [Quantifiers](#quantifiers)
-    - [search() vs match()](#search-match)
-    - [Other Special Characters](#other-special-characters)
-    - [Greedy vs Non-Greedy Matching](#greedy-non-greedy)
-    - [Capturing Groups](#capturing-groups)
-    - [Alternation & Non-Capturing Groups](#alternation-non-capturing-groups)
-    - [Named Groups](#named-groups)
-    - [Backreferences](#backreferences)
-    - [Looking Around](#looking-around)
+- [Table of Contents](#table-of-contents)
+- [Basic String Methods {#basic-string-methods}](#basic-string-methods-basic-string-methods)
+    - [Length of a string {#length-of-a-string}](#length-of-a-string-length-of-a-string)
+    - [Concatenation {#concatenation}](#concatenation-concatenation)
+    - [Slicing {#slicing}](#slicing-slicing)
+    - [String capitalization {#string-capitalization}](#string-capitalization-string-capitalization)
+    - [Split methods {#split-methods}](#split-methods-split-methods)
+    - [Remove whitespace {#remove-whitespace}](#remove-whitespace-remove-whitespace)
+    - [Replace methods {#replace-methods}](#replace-methods-replace-methods)
+  - [Chain string methods {#chain-string-methods}](#chain-string-methods-chain-string-methods)
+    - [Find the position of a substring {#find-substring-position}](#find-the-position-of-a-substring-find-substring-position)
+  - [Count the occurrences of a substring {#count-substr-occurrences}](#count-the-occurrences-of-a-substring-count-substr-occurrences)
+  - [Positional string formatting {#positional-string-formatting}](#positional-string-formatting-positional-string-formatting)
+- [Regular Expressions {#regular-expressions}](#regular-expressions-regular-expressions)
+  - [Common methods {#common-methods}](#common-methods-common-methods)
+  - [Metacharacters {#metacharacters}](#metacharacters-metacharacters)
+  - [Quantifiers {#quantifiers}](#quantifiers-quantifiers)
+  - [search() vs match() {#search-match}](#search-vs-match-search-match)
+  - [Other Special Characters {#other-special-characters}](#other-special-characters-other-special-characters)
+- [Greedy vs Non-Greedy Matching {#greedy-non-greedy}](#greedy-vs-non-greedy-matching-greedy-non-greedy)
+- [Capturing Groups {#capturing-groups}](#capturing-groups-capturing-groups)
+- [Alternation \& Non-Capturing Groups {#alternation-non-capturing-groups}](#alternation--non-capturing-groups-alternation-non-capturing-groups)
+- [Named Groups {#named-groups}](#named-groups-named-groups)
+- [Backreferences {#backreferences}](#backreferences-backreferences)
+- [Looking Around {#looking-around}](#looking-around-looking-around)
 
 
 ## Basic String Methods {#basic-string-methods}
@@ -860,16 +861,16 @@ The dot `.` is a special character that represents any single character except f
 If you want to match a literal dot, you need to escape it like `\.`
 
 ```python
-text = 'https://klaudiaszpyrka.github.io/'
+text = 'https://klaudiawolinska.github.io/'
 
 print(re.findall(r'http.*', text))
 ```
 ```
-['https://klaudiaszpyrka.github.io/']
+['https://klaudiawolinska.github.io/']
 ```
 
 ```python
-text = 'https://klaudiaszpyrka.github.io/'
+text = 'https://klaudiawolinska.github.io/'
 
 print(re.findall(r'http\.*', text))
 ```
@@ -1080,7 +1081,7 @@ Round brackets can be used to group alternative patterns. Suppose you have a lis
 
 ```python
 urls = 'https://www.wikipedia.org/, https://www.google.com/, ' \
-       'https://www.regular-expressions.info/, https://klaudiaszpyrka.github.io/'
+       'https://www.regular-expressions.info/, https://klaudiawolinska.github.io/'
 
 print(re.findall(r'www\.([a-zA-Z0-9]+)\.(org|com)', urls))
 ```
@@ -1092,7 +1093,7 @@ The last round brackets `(org|com)` were used here to group URLs endings. Howeve
 
 ```python
 urls = 'https://www.wikipedia.org/, https://www.google.com/, ' \
-       'https://www.regular-expressions.info/, https://klaudiaszpyrka.github.io/'
+       'https://www.regular-expressions.info/, https://klaudiawolinska.github.io/'
 
 print(re.findall(r'www\.([a-zA-Z0-9]+)\.(?:org|com)', urls))
 ```
@@ -1107,7 +1108,7 @@ Named groups can be created using the syntax `(?P<groupname>pattern)`. Thanks to
 
 ```python
 urls = 'https://www.wikipedia.org/, https://www.google.com/, ' \
-       'https://www.regular-expressions.info/, https://klaudiaszpyrka.github.io/'
+       'https://www.regular-expressions.info/, https://klaudiawolinska.github.io/'
 
 result = re.search(r'www\.([a-zA-Z0-9]+)\.(?P<top_level_domain>org|com)', urls)
 
@@ -1248,4 +1249,4 @@ print(re.findall(r'\w+(?<!\.txt):\s(\w+)', files))
 <br>
 Congratulations on reaching the end of this post! Regex can be extremely difficult but they're also a very powerful tool.
 
-You can find a Jupyter Notebook with all examples from this post [here](https://github.com/klaudiaszpyrka/klaudiaszpyrka.github.io/blob/main/assets/notebooks/2019-08-06-python_strings_regex.ipynb).
+You can find a Jupyter Notebook with all examples from this post [here](https://github.com/klaudiawolinska/klaudiawolinska.github.io/blob/main/assets/notebooks/2019-08-06-python_strings_regex.ipynb).

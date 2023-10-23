@@ -4,17 +4,17 @@ title:  "Extract data from GitHub using Python and Airflow"
 date:   2023-01-31 00:00:00 +0000 
 ---
 
-- [PyGithub intro](#pygithub-intro)
-  * [Installation and access token](#installation-and-access-token)
-  * [Basic classes and methods](#basic-classes-and-methods)
-- [GithubOperator in Airflow](#githuboperator-in-airflow)
-    + [Installation and setup](#installation-and-setup)
-  * [Get user data](#get-user-data)
-  * [Get repo data](#get-repo-data)
-  * [List repositories](#list-repositories)
-  * [List commits](#list-commits)
-  * [Get contents](#get-contents)
-- [Hands-on example: list all file paths in a repository](#hands-on-example--list-all-file-paths-in-a-repository)
+- [PyGithub intro {#pygithub-intro}](#pygithub-intro-pygithub-intro)
+  - [Installation and access token {#installation-and-access-token}](#installation-and-access-token-installation-and-access-token)
+  - [Basic classes and methods {#basic-classes-and-methods}](#basic-classes-and-methods-basic-classes-and-methods)
+- [GithubOperator in Airflow {#githuboperator-in-airflow}](#githuboperator-in-airflow-githuboperator-in-airflow)
+    - [Installation and setup {#installation-and-setup}](#installation-and-setup-installation-and-setup)
+  - [Get user data {#get-user-data}](#get-user-data-get-user-data)
+  - [Get repo data {#get-repo-data}](#get-repo-data-get-repo-data)
+  - [List repositories {#list-repositories}](#list-repositories-list-repositories)
+  - [List commits {#list-commits}](#list-commits-list-commits)
+  - [Get contents {#get-contents}](#get-contents-get-contents)
+- [Hands-on example: list all file paths in a repository {#hands-on-example--list-all-file-paths-in-a-repository}](#hands-on-example-list-all-file-paths-in-a-repository-hands-on-example--list-all-file-paths-in-a-repository)
 
 ## PyGithub intro {#pygithub-intro}
 
@@ -69,8 +69,8 @@ print('Number of public repos:', my_user.public_repos)
 ```
 
 	AuthenticatedUser(login=None)
-	Login: klaudiaszpyrka
-	Name: Klaudia Szpyrka
+	Login: klaudiawolinska
+	Name: Klaudia Wolinska
 	Location: Kraków, Poland
 	Bio: CODE 👩‍💻 RUN 🏃‍♀️ READ 📚 REPEAT
 	Number of public repos: 6
@@ -79,7 +79,7 @@ print('Number of public repos:', my_user.public_repos)
 `get_repo()` method returns a specific repository by its name and owner.
 
 ```python
-my_repo = g.get_repo('klaudiaszpyrka/klaudiaszpyrka.github.io')
+my_repo = g.get_repo('klaudiawolinska/klaudiawolinska.github.io')
 
 print(my_repo)
 print('Name:', my_repo.name)
@@ -88,11 +88,11 @@ print('Language:', my_repo.language)
 print('URL:', my_repo.html_url)
 ```
 
-	Repository(full_name="klaudiaszpyrka/klaudiaszpyrka.github.io")
-	Name: klaudiaszpyrka.github.io
+	Repository(full_name="klaudiawolinska/klaudiawolinska.github.io")
+	Name: klaudiawolinska.github.io
 	Description: Data Engineering Blog
 	Language: Jupyter Notebook
-	URL: https://github.com/klaudiaszpyrka/klaudiaszpyrka.github.io
+	URL: https://github.com/klaudiawolinska/klaudiawolinska.github.io
 
 <br>
 `get_user().get_repos()` method returns a list of repositories owned by the authenticated user.
@@ -118,13 +118,13 @@ for repo in my_repos:
 	Name: complex-queries
 	Description: A place to store complex SQL queries for potential reuse
 	Language: None
-	URL: https://github.com/klaudiaszpyrka/complex-queries
+	URL: https://github.com/klaudiawolinska/complex-queries
 	
 	
 	Name: hackerrank-go
 	Description: Solutions to HackerRank challenges in Go
 	Language: Go
-	URL: https://github.com/klaudiaszpyrka/hackerrank-go
+	URL: https://github.com/klaudiawolinska/hackerrank-go
 	
 	(...)
 
@@ -132,7 +132,7 @@ for repo in my_repos:
 `get_commits()` method of the repository object returns a list of commits.
 
 ```python
-commits = g.get_repo('klaudiaszpyrka/klaudiaszpyrka.github.io').get_commits()
+commits = g.get_repo('klaudiawolinska/klaudiawolinska.github.io').get_commits()
 
 print(commits)
 print('\n')
@@ -150,13 +150,13 @@ for commit in commits:
 	
 	
 	SHA: 4a48c7e7ebf622dca54e419417f300a60a556343
-	Author: Klaudia Szpyrka
+	Author: Klaudia Wolinska
 	Date: 2023-01-23 15:23:39
 	Message: add redshift grants post
 	
 	
 	SHA: 23ce166cb7f479277795eb2ce6537af809bbf76b
-	Author: Klaudia Szpyrka
+	Author: Klaudia Wolinska
 	Date: 2023-01-23 15:01:01
 	Message: remove rss subscribe
 	
@@ -166,7 +166,7 @@ for commit in commits:
 The `get_contents()` method in PyGithub is used to retrieve the contents of a file or directory in a GitHub repository. This method returns a `ContentFile` object for a file or a list of `ContentFile` objects for a directory. Each `ContentFile` object has information about the file, including the type (file or directory), the name, the path, and the content.
 
 ```python
-my_repo = g.get_repo('klaudiaszpyrka/klaudiaszpyrka.github.io')
+my_repo = g.get_repo('klaudiawolinska/klaudiawolinska.github.io')
 
 sample_file = my_repo.get_contents('_layouts/default.html')
 
@@ -186,7 +186,7 @@ print('Content:', sample_file.decoded_content)
 	
 <br>	
 ```python
-my_repo = g.get_repo('klaudiaszpyrka/klaudiaszpyrka.github.io')
+my_repo = g.get_repo('klaudiawolinska/klaudiawolinska.github.io')
 
 sample_dir = my_repo.get_contents('assets')
 
@@ -262,7 +262,7 @@ get_repo_info = GithubOperator(
     task_id='get_repo_info',
     github_method='get_repo',
     github_method_args={'full_name_or_id': 
-                        'klaudiaszpyrka/klaudiaszpyrka.github.io'},
+                        'klaudiawolinska/klaudiawolinska.github.io'},
     result_processor=lambda repo: f'''Name: {repo.name}, 
                                       Description: {repo.description}''',
 )
@@ -315,7 +315,7 @@ list_commits = GithubOperator(
     task_id='list_commits',
     github_method='get_repo',
     github_method_args={'full_name_or_id': 
-                        'klaudiaszpyrka/klaudiaszpyrka.github.io'},
+                        'klaudiawolinska/klaudiawolinska.github.io'},
     result_processor=lambda repo: 
                     [dict(SHA=commit.sha, 
                           author=commit.author.name,
@@ -336,7 +336,7 @@ get_contents = GithubOperator(
     task_id='get_contents',
     github_method='get_repo',
     github_method_args={'full_name_or_id': 
-                        'klaudiaszpyrka/klaudiaszpyrka.github.io'},
+                        'klaudiawolinska/klaudiawolinska.github.io'},
     result_processor=lambda repo: 
                     [dict(type=content.type, 
                           name=content.name,
@@ -351,14 +351,14 @@ get_contents = GithubOperator(
 ## Hands-on example: list all file paths in a repository {#hands-on-example--list-all-file-paths-in-a-repository}
 The below piece of code uses the PyGithub library to retrieve information about the contents of a GitHub repository.
 
-The first line retrieves a `Repository` object for the repository with the full name `klaudiaszpyrka/klaudiaszpyrka.github.io` using the `get_repo` method of a `Github` object.
+The first line retrieves a `Repository` object for the repository with the full name `klaudiawolinska/klaudiawolinska.github.io` using the `get_repo` method of a `Github` object.
 
 The second line retrieves the contents of the root directory of the repository using the `get_contents` method of the `Repository` object and stores them in the `contents` variable.
 
 The rest of the code implements a while loop that uses `pop` and `extend` methods to traverse the contents of the repository and construct a list of file paths, stored in the `files_list` variable. The loop continues until the contents list is empty or has only one item. The loop checks the type of each content item, using the `type` attribute. If it's a directory, it retrieves the contents of the directory using the `get_contents` method of the `Repository` object and appends them to the contents list. If it's a file, its path is appended to the `files_list` list. The resulting `files_list` variable contains a list of file paths for all the files in the repository.
  
 ```python
-repo = g.get_repo('klaudiaszpyrka/klaudiaszpyrka.github.io')
+repo = g.get_repo('klaudiawolinska/klaudiawolinska.github.io')
 contents = repo.get_contents('')
 	
 files_list = []
@@ -400,7 +400,7 @@ list_paths_task = GithubOperator(
     task_id='list_paths_task',
     github_method='get_repo',
     github_method_args={'full_name_or_id': 
-                        'klaudiaszpyrka/klaudiaszpyrka.github.io'},
+                        'klaudiawolinska/klaudiawolinska.github.io'},
     result_processor=lambda repo: list_paths(repo, repo.get_contents(''))
 )
 
