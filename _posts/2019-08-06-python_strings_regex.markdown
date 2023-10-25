@@ -6,34 +6,34 @@ date: 2019-08-06 00:00:00 +0100
 
 Text processing and manipulation are often critical in the process of data cleansing and preparation. Machine learning models which use such data include _sentiment analysis of social media, language translations, filtering spam messages, parsing and extracting data from websites_ and many more. Regular expressions allow for these tasks to be completed way faster and more efficiently.
 
+
 ## Table of Contents
-- [Table of Contents](#table-of-contents)
-- [Basic String Methods {#basic-string-methods}](#basic-string-methods-basic-string-methods)
-    - [Length of a string {#length-of-a-string}](#length-of-a-string-length-of-a-string)
-    - [Concatenation {#concatenation}](#concatenation-concatenation)
-    - [Slicing {#slicing}](#slicing-slicing)
-    - [String capitalization {#string-capitalization}](#string-capitalization-string-capitalization)
-    - [Split methods {#split-methods}](#split-methods-split-methods)
-    - [Remove whitespace {#remove-whitespace}](#remove-whitespace-remove-whitespace)
-    - [Replace methods {#replace-methods}](#replace-methods-replace-methods)
-  - [Chain string methods {#chain-string-methods}](#chain-string-methods-chain-string-methods)
-    - [Find the position of a substring {#find-substring-position}](#find-the-position-of-a-substring-find-substring-position)
-  - [Count the occurrences of a substring {#count-substr-occurrences}](#count-the-occurrences-of-a-substring-count-substr-occurrences)
-  - [Positional string formatting {#positional-string-formatting}](#positional-string-formatting-positional-string-formatting)
-- [Regular Expressions {#regular-expressions}](#regular-expressions-regular-expressions)
-  - [Common methods {#common-methods}](#common-methods-common-methods)
-  - [Metacharacters {#metacharacters}](#metacharacters-metacharacters)
-  - [Quantifiers {#quantifiers}](#quantifiers-quantifiers)
-  - [search() vs match() {#search-match}](#search-vs-match-search-match)
-  - [Other Special Characters {#other-special-characters}](#other-special-characters-other-special-characters)
-- [Greedy vs Non-Greedy Matching {#greedy-non-greedy}](#greedy-vs-non-greedy-matching-greedy-non-greedy)
-- [Capturing Groups {#capturing-groups}](#capturing-groups-capturing-groups)
-- [Alternation \& Non-Capturing Groups {#alternation-non-capturing-groups}](#alternation--non-capturing-groups-alternation-non-capturing-groups)
-- [Named Groups {#named-groups}](#named-groups-named-groups)
-- [Backreferences {#backreferences}](#backreferences-backreferences)
-- [Looking Around {#looking-around}](#looking-around-looking-around)
-
-
+- [Basic String Methods](#basic-string-methods)
+    - [Length of a string](#length-of-a-string)
+    - [Concatenation](#concatenation)
+    - [Slicing](#slicing)
+    - [String capitalization](#string-capitalization)
+    - [Split methods](#split-methods)
+    - [Remove whitespace](#remove-whitespace)
+    - [Replace methods](#replace-methods)
+    - [Chain string methods](#chain-string-methods)
+    - [Find the position of a substring](#find-substring-position)
+    - [Count the occurrences of a substring](#count-substr-occurrences)
+    - [Positional string formatting](#positional-string-formatting)
+- [Regular Expressions](#regular-expressions)
+    - [Common methods](#common-methods)
+    - [Metacharacters](#metacharacters)
+    - [Quantifiers](#quantifiers)
+    - [search() vs match()](#search-match)
+    - [Other Special Characters](#other-special-characters)
+    - [Greedy vs Non-Greedy Matching](#greedy-non-greedy)
+    - [Capturing Groups](#capturing-groups)
+    - [Alternation & Non-Capturing Groups](#alternation-non-capturing-groups)
+    - [Named Groups](#named-groups)
+    - [Backreferences](#backreferences)
+    - [Looking Around](#looking-around)
+  
+  
 ## Basic String Methods {#basic-string-methods}
 Python recognizes any sequence of characters placed inside quotes as a string object. A string variable can be defined using either single quotes (`'example'`) or double quotes (`"example"`). Both are equivalent and can be used interchangeably. However, if you want to place a literal quote inside the string, you need to enclose it (the string) in the other type of quote, e.g.:
 
